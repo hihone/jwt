@@ -24,10 +24,13 @@ class JWT
     /**
      * 生成 token
      *
+     * @param array $data
+     *
      * @return string
      */
-    public static function getToken()
+    public static function getToken(array $data = [])
     {
+        self::payload($data);
         $base64Header            = self::base64UrlEncode(json_encode(self::$headers, JSON_UNESCAPED_UNICODE));
         $base64Payload           = self::base64UrlEncode(json_encode(self::$payload, JSON_UNESCAPED_UNICODE));
         $banse64HeaderAndPayload = $base64Header . '.' . $base64Payload;
@@ -53,8 +56,7 @@ class JWT
             'iat' => $now_time,#签发时间
             'jti' => uniqid('JWT' . $now_time),#编号
         ];
-        !empty($data) && self::$payload = array_merge($payloads, $data);
-        empty($data) && self::$payload = $payloads;
+        self::$payload = array_merge($payloads, $data);
     }
 
     /**
