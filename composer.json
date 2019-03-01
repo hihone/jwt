@@ -1,0 +1,34 @@
+{
+    "name": "hihone/jwt",
+    "description": "laravel-jwt",
+    "keywords": ["laravel", "jwt", "laravel-jwt"],
+    "homepage": "https://github.com/hihone/jwt",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "hihone",
+            "email": "yyanghf@hihone.cn"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "illuminate/config": "^5.0,<5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "hihone\\jwt\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "hihone\\jwt\\JWTServiceProvider"
+            ]
+        }
+    }
+
+}
