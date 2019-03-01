@@ -4,16 +4,16 @@
 只要在你的 `composer.json` 文件require中加入下面内容，就能获得最新版.
 
 ~~~
-"hihone/jwt": "dev-master"
+composer require hihone/jwt:dev-master
 ~~~
 
 
 然后需要运行 "composer update" 来更新你的项目
 
-安装完后，在 `app/config/app.php` 文件中找到 `providers` 键，
+安装完后，生成 `config/jwt.php` 配置文件，
 
 ~~~
-\hihone\jwt\JWTServiceProvider::class,
+php artisan vendor:publish --provider="hihone\jwt\JWTServiceProvider" 
 ~~~
 
 ## 使用
