@@ -3,7 +3,7 @@
     "description": "laravel-jwt",
     "keywords": ["laravel", "jwt", "laravel-jwt"],
     "homepage": "https://github.com/hihone/jwt",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
     "authors": [
