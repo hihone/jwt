@@ -53,8 +53,8 @@ class JWT
             'iat' => $now_time,#签发时间
             'jti' => uniqid('JWT' . $now_time),#编号
         ];
-
-        self::$payload = array_merge($payloads, $data);
+        !empty($data) && self::$payload = array_merge($payloads, $data);
+        empty($data) && self::$payload = $payloads;
     }
 
     /**
